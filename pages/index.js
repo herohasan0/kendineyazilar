@@ -1,7 +1,7 @@
 import Layout from '../components/layout';
 
 function HomePage() {
-  return <Layout>Welcome to Next.js!</Layout>;
+  return <Layout></Layout>;
 }
 
 export default HomePage;

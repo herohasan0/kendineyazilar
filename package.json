@@ -9,6 +9,7 @@
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
+    "@svgr/cli": "^5.4.0",
     "css-loader": "^3.6.0",
     "postcss-custom-media": "^7.0.8",
     "postcss-loader": "^3.0.0",
@@ -19,7 +20,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "icon": "svgr icons -d components/icons --icon  --replace-attr-values \"#000=currentColor\""
   },
   "keywords": [
     "blog"
