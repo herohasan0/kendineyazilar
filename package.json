@@ -18,7 +18,7 @@
     "style-loader": "^1.2.1"
   },
   "scripts": {
-    "dev": "next",
+    "dev": "next -p 3001",
     "build": "next build",
     "start": "next start",
     "icon": "svgr icons -d components/icons --icon  --replace-attr-values \"#000=currentColor\""

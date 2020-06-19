@@ -8,8 +8,21 @@ html {
 
 body {
   font-size: 1rem;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
-    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-family: 'Open Sans', sans-serif;
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; */
   background-color: var(--c-primary);
   color: var(--c-secondary);
+}
+
+a {
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+button {
+  background-color: transparent;
+  cursor: pointer;
 }

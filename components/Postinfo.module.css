@@ -1,0 +1,10 @@
+.Postinfo {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 40px;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 19px;
+  font-weight: lighter;
+}

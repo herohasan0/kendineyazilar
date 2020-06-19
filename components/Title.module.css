@@ -1,0 +1,6 @@
+.Title {
+  font-size: 40px;
+  text-align: center;
+  font-weight: normal;
+  color: var(--c-secondary);
+}

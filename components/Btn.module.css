@@ -1,0 +1,11 @@
+.Btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  width: 122px;
+  height: 52px;
+  background: var(--c-secondary);
+  border-radius: 10px;
+  font-size: 19px;
+}

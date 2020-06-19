@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import React from 'react';
 import Logo from './Logo';
 import Line from './Line';
@@ -8,7 +9,6 @@ function Stack({ children }) {
   return (
     <div className={styles.layout}>
       <Logo />
-      <Line />
       {children}
     </div>
   );

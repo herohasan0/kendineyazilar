@@ -1,0 +1,8 @@
+.PostContent {
+  font-size: 21px;
+  font-weight: normal;
+  color: var(--c-secondary);
+  margin-top: 40px;
+  letter-spacing: 0.05em;
+  line-height: 160%;
+}
