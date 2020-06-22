@@ -6,10 +6,12 @@ import Readtime from './Readtime';
 
 import styles from './Postinfo.module.css';
 
-function Postinfo({ children }) {
+function Postinfo({ ...props }) {
   return (
     <div className={styles.Postinfo}>
-      <Tag /> | <Author /> | <Time /> | <Readtime />
+      <Tag Tagtitle={props.Tag} /> | <Author Author={props.Author} /> |{' '}
+      <Time Date={props.Date} />
+      | <Readtime />
     </div>
   );
 }

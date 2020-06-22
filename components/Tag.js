@@ -1,14 +1,12 @@
 import React from 'react';
 import A from './a';
 
+import cn from 'classnames';
+
 import styles from './Tag.module.css';
 
-function Tag({ children }) {
-  return (
-    <div className={styles.Tag}>
-      <A>tag1</A>
-    </div>
-  );
+function Tag({ bg = false, ...props }) {
+  return <A className={cn(styles.Tag, bg && styles.bg)}>{props.Tagtitle}</A>;
 }
 
 export default Tag;

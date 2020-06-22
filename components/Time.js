@@ -3,11 +3,11 @@ import A from './a';
 
 import styles from './Time.module.css';
 
-function Time({ children }) {
+function Time({ ...props }) {
   return (
     <div className={styles.Time}>
       <A>
-        <time>03 2020</time>
+        <time>{props.Date}</time>
       </A>
     </div>
   );

@@ -7,12 +7,8 @@ import styles from './PostContent.module.css';
 function PostContent(props) {
   return (
     <div>
-      <Postinfo />
-      <p className={styles.PostContent}>
-        {props.content.length > 350
-          ? props.content.substr(0, 350) + '...'
-          : props.content}
-      </p>
+      <Postinfo Author={props.Author} Tag={props.Tag} Date={props.Date} />
+      <p className={styles.PostContent}>{props.content}</p>
       <Btn />
     </div>
   );

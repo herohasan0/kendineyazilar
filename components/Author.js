@@ -3,10 +3,10 @@ import A from './a';
 
 import styles from './Author.module.css';
 
-function Author({ children }) {
+function Author({ ...props }) {
   return (
     <div className={styles.Author}>
-      <A>Author1</A>
+      <A>{props.Author}</A>
     </div>
   );
 }

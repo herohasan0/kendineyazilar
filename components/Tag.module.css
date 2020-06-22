@@ -1,2 +1,17 @@
 .Tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 22px;
+  color: var(--c-secondary);
+}
+
+.bg {
+  padding-left: 12px;
+  padding-right: 12px;
+  background: var(--c-secondary);
+  border-radius: 4px;
+  color: var(--c-primary);
+  font-size: 13px;
 }
