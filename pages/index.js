@@ -2,6 +2,7 @@ import Layout from '../components/layout';
 import Post from '../components/Post';
 import Main from '../components/Main';
 import Leftside from '../components/Leftside';
+import Link from 'next/link';
 
 function HomePage({ posts }) {
   return (
@@ -10,6 +11,7 @@ function HomePage({ posts }) {
       <Main>
         {posts.map((post) => (
           <Post
+            id={post._id}
             key={post._id}
             title={post.Baslik}
             Author={post.Yazar.username}
@@ -32,8 +34,6 @@ function HomePage({ posts }) {
 export async function getStaticProps() {
   const res = await fetch('https://kendineyazilar.herokuapp.com/posts');
   const posts = await res.json();
-  console.log(posts[0].createdAt.substr(0, 4));
-  console.log(posts[0].createdAt.substr(5, 2));
 
   return {
     props: {

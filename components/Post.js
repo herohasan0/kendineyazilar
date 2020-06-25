@@ -17,6 +17,8 @@ function Post({ ...props }) {
             Date={props.Date}
             Author={props.Author}
             content={props.text}
+            id={props.id}
+            noBtn={props.noBtn}
           />
         </article>
       </main>
