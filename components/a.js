@@ -6,7 +6,7 @@ import styles from './a.module.css';
 
 function A({ className, children, ...props }) {
   return (
-    <Link href="/tags/[id]" as={`/posts?Etiket.etiket=${props.tag}`}>
+    <Link href="/tags/[id]" as={`/tags/${props.tag}`}>
       <a className={className} rel="noopener noreferrer">
         {children}
       </a>

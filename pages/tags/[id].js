@@ -3,13 +3,13 @@ import Postcard from '../../components/Post';
 import Main from '../../components/Main';
 import Leftside from '../../components/Leftside';
 
-function Post({ posts }) {
+function Post({ posts, tags, authors }) {
   return (
     <Layout>
-      <Leftside />
+      <Leftside tags={tags} authors={authors} />
       <Main>
         {posts.map((post) => (
-          <Post
+          <Postcard
             id={post._id}
             key={post._id}
             title={post.Baslik}
@@ -31,11 +31,11 @@ function Post({ posts }) {
 }
 
 export async function getStaticPaths() {
-  const res = await fetch('https://kendineyazilar.herokuapp.com/posts');
-  const posts = await res.json();
+  const res = await fetch('https://kendineyazilar.herokuapp.com/tags');
+  const tags = await res.json();
 
-  const paths = posts.map((post) => ({
-    params: { id: post._id },
+  const paths = tags.map((tag) => ({
+    params: { id: tag.etiket },
   }));
 
   return { paths, fallback: false };
@@ -45,12 +45,23 @@ export async function getStaticProps({ params }) {
   // params contains the post `id`.
   // If the route is like /posts/1, then params.id is 1
   const res = await fetch(
-    `https://kendineyazilar.herokuapp.com/posts?Etiket.etiket=${param.id}`
+    `https://kendineyazilar.herokuapp.com/posts?Etiket.etiket=${params.id}`
   );
+  const resTag = await fetch('https://kendineyazilar.herokuapp.com/tags');
+  const resAuthor = await fetch('https://kendineyazilar.herokuapp.com/users');
+
+  const tags = await resTag.json();
+  const authors = await resAuthor.json();
   const posts = await res.json();
 
   // Pass post data to the page via props
-  return { props: { posts } };
+  return {
+    props: {
+      posts,
+      tags,
+      authors,
+    },
+  };
 }
 
 export default Post;

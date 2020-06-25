@@ -7,12 +7,6 @@ function HomePage({ posts, tags, authors }) {
   return (
     <Layout>
       <Leftside tags={tags} authors={authors} />
-      <a
-        style={{ color: '#fff !important' }}
-        href="https://kendineyazilar.herokuapp.com/posts?Etiket.etiket=edebi"
-      >
-        tıkla
-      </a>
       <Main>
         {posts.map((post) => (
           <Post

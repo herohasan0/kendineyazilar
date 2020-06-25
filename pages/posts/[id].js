@@ -3,10 +3,10 @@ import Postcard from '../../components/Post';
 import Main from '../../components/Main';
 import Leftside from '../../components/Leftside';
 
-function Post({ post }) {
+function Post({ post, tags, authors }) {
   return (
     <Layout>
-      <Leftside />
+      <Leftside tags={tags} authors={authors} />
       <Main>
         <Postcard
           key={post._id}
@@ -39,10 +39,21 @@ export async function getStaticProps({ params }) {
   const res = await fetch(
     `https://kendineyazilar.herokuapp.com/posts/${params.id}`
   );
+  const resTag = await fetch('https://kendineyazilar.herokuapp.com/tags');
+  const resAuthor = await fetch('https://kendineyazilar.herokuapp.com/users');
+
   const post = await res.json();
+  const tags = await resTag.json();
+  const authors = await resAuthor.json();
 
   // Pass post data to the page via props
-  return { props: { post } };
+  return {
+    props: {
+      post,
+      tags,
+      authors,
+    },
+  };
 }
 
 export default Post;
