@@ -6,7 +6,11 @@ import cn from 'classnames';
 import styles from './Tag.module.css';
 
 function Tag({ bg = false, ...props }) {
-  return <A className={cn(styles.Tag, bg && styles.bg)}>{props.Tagtitle}</A>;
+  return (
+    <A className={cn(styles.Tag, bg && styles.bg)} tag={props.tag}>
+      {props.Tagtitle}
+    </A>
+  );
 }
 
 export default Tag;

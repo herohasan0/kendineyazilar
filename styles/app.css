@@ -17,6 +17,7 @@ body {
 }
 
 a {
+  color: var(--c-secondary);
   &:hover {
     text-decoration: underline;
     cursor: pointer;

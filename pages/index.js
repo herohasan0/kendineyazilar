@@ -2,12 +2,17 @@ import Layout from '../components/layout';
 import Post from '../components/Post';
 import Main from '../components/Main';
 import Leftside from '../components/Leftside';
-import Link from 'next/link';
 
-function HomePage({ posts }) {
+function HomePage({ posts, tags, authors }) {
   return (
     <Layout>
-      <Leftside />
+      <Leftside tags={tags} authors={authors} />
+      <a
+        style={{ color: '#fff !important' }}
+        href="https://kendineyazilar.herokuapp.com/posts?Etiket.etiket=edebi"
+      >
+        tıkla
+      </a>
       <Main>
         {posts.map((post) => (
           <Post
@@ -33,11 +38,17 @@ function HomePage({ posts }) {
 
 export async function getStaticProps() {
   const res = await fetch('https://kendineyazilar.herokuapp.com/posts');
+  const resTag = await fetch('https://kendineyazilar.herokuapp.com/tags');
+  const resAuthor = await fetch('https://kendineyazilar.herokuapp.com/users');
   const posts = await res.json();
+  const tags = await resTag.json();
+  const authors = await resAuthor.json();
 
   return {
     props: {
       posts,
+      tags,
+      authors,
     },
   };
 }

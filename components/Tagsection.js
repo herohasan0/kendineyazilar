@@ -1,20 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Tag from './Tag';
 
 import styles from './Tagsection.module.css';
 
 function Tagsection({ ...props }) {
+  const [tags, setTags] = useState([]);
+
+  useEffect(() => {
+    setTags(props.tags);
+  });
+
   return (
     <aside className={styles.Tagsection}>
-      <h3>{props.Taghead}</h3>
+      <h3>Etiketler</h3>
       <div>
-        <Tag bg Tagtitle="Tag1" />
-        <Tag bg Tagtitle="Tagsection" />
-        <Tag bg Tagtitle="Tagother" />
-        <Tag bg Tagtitle="Tagnew" />
-        <Tag bg Tagtitle="Tag2" />
-        <Tag bg Tagtitle="Tagtagtag" />
+        {tags &&
+          tags.map((tag) => (
+            <Tag key={tag._id} tag={tag.etiket} bg Tagtitle={tag.etiket} />
+          ))}
       </div>
     </aside>
   );
