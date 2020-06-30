@@ -6,7 +6,7 @@ import styles from './Author.module.css';
 function Author({ ...props }) {
   return (
     <div className={styles.Author}>
-      <A>{props.Author}</A>
+      <A as={`/users?username=${props.Author}`}>{props.Author}</A>
     </div>
   );
 }

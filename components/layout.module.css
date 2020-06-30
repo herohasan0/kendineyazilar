@@ -6,7 +6,7 @@
   margin-right: auto;
   margin-top: 50px;
 
-  @media (--d) {
+  @media (--t) {
     max-width: 1320px;
   }
 }

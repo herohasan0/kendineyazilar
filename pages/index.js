@@ -14,7 +14,8 @@ function HomePage({ posts, tags, authors }) {
             key={post._id}
             title={post.Baslik}
             Author={post.Yazar.username}
-            Tag={post.Etiket[0].etiket}
+            //TODO
+            Tag={post.Etiket ? post.Etiket[0].etiket : ''}
             text={
               post.Icerik.length > 350
                 ? post.Icerik.substr(0, 350) + '...'

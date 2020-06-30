@@ -18,6 +18,8 @@ function Authorsection({ ...props }) {
         {authors &&
           authors.map((author) => (
             <Tag
+              as={`/yazarlar/${author.username}`}
+              href={props.href}
               key={author._id}
               tag={author.username}
               bg

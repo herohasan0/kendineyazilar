@@ -7,8 +7,8 @@ import styles from './Leftside.module.css';
 function Leftside({ children, ...props }) {
   return (
     <div className={styles.Leftside}>
-      <Tagsection tags={props.tags} />
-      <Authorsection authors={props.authors} />
+      <Tagsection tags={props.tags} href="/etiketler/[id]" />
+      <Authorsection authors={props.authors} href="/yazarlar/[id]" />
     </div>
   );
 }

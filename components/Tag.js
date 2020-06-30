@@ -7,7 +7,12 @@ import styles from './Tag.module.css';
 
 function Tag({ bg = false, ...props }) {
   return (
-    <A className={cn(styles.Tag, bg && styles.bg)} tag={props.tag}>
+    <A
+      className={cn(styles.Tag, bg && styles.bg)}
+      tag={props.tag}
+      as={props.as}
+      href={props.href}
+    >
       {props.Tagtitle}
     </A>
   );

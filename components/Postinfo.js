@@ -9,8 +9,13 @@ import styles from './Postinfo.module.css';
 function Postinfo({ ...props }) {
   return (
     <div className={styles.Postinfo}>
-      <Tag Tagtitle={props.Tag} /> | <Author Author={props.Author} /> |{' '}
-      <Time Date={props.Date} />
+      <Tag
+        tag={props.Tag}
+        as={`/etiketler/${props.Tag}`}
+        Tagtitle={props.Tag}
+        href="/etiketler/[id]"
+      />{' '}
+      | <Author Author={props.Author} /> | <Time Date={props.Date} />
       | <Readtime />
     </div>
   );

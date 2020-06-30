@@ -17,7 +17,14 @@ function Tagsection({ ...props }) {
       <div>
         {tags &&
           tags.map((tag) => (
-            <Tag key={tag._id} tag={tag.etiket} bg Tagtitle={tag.etiket} />
+            <Tag
+              as={`/etiketler/${tag.etiket}`}
+              href={props.href}
+              key={tag._id}
+              tag={tag.etiket}
+              bg
+              Tagtitle={tag.etiket}
+            />
           ))}
       </div>
     </aside>
