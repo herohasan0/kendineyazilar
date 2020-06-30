@@ -16,6 +16,8 @@ function Post({ post, tags, authors }) {
           text={post.Icerik}
           Date={post.createdAt.substr(5, 2) + '.' + post.createdAt.substr(0, 4)}
           noBtn
+          imgCover
+          imgId={post.Fotograf_Id && post.Fotograf_Id}
         />
       </Main>
     </Layout>

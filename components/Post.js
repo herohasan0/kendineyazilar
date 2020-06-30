@@ -19,6 +19,8 @@ function Post({ ...props }) {
             content={props.text}
             id={props.id}
             noBtn={props.noBtn}
+            imgCover={props.imgCover}
+            imgId={props.imgId}
           />
         </article>
       </main>
