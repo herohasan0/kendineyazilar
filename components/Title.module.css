@@ -1,6 +1,9 @@
 .Title {
-  font-size: 40px;
+  font-size: 28px;
   text-align: center;
   font-weight: normal;
   color: var(--c-secondary);
+  @media (--t) {
+    font-size: 40px;
+  }
 }

@@ -1,12 +1,38 @@
+import React, { useState, useEffect } from 'react';
 import Layout from '../../components/layout';
 import Postcard from '../../components/Post';
 import Main from '../../components/Main';
 import Leftside from '../../components/Leftside';
+import Topside from '../../components/Topside';
+
+import CONST from '../../constants';
+
+import useWindowSize from '../../hooks/useWindowSize';
 
 function Post({ post, tags, authors }) {
+  const [width, setWidth] = useState();
+  const size = useWindowSize();
+
+  let margin = '0';
+
+  if (width > CONST.TABLET_SIZE) {
+    margin = '120px';
+  } else {
+    margin = '60px';
+  }
+
+  useEffect(() => {
+    setWidth(size.width);
+  });
+
   return (
     <Layout>
-      <Leftside tags={tags} authors={authors} />
+      {width > CONST.TABLET_SIZE ? (
+        <Leftside tags={tags} authors={authors} />
+      ) : (
+        <Topside tags={tags} authors={authors} />
+      )}
+
       <Main>
         <Postcard
           key={post._id}
@@ -18,7 +44,9 @@ function Post({ post, tags, authors }) {
           noBtn
           imgCover
           imgId={post.Fotograf_Id && post.Fotograf_Id}
+          customStyle={{ marginTop: margin }}
         />
+        {/* {size.width > CONST.TABLET_SIZE && <Extra className="">extra</Extra>} */}
       </Main>
     </Layout>
   );
@@ -41,6 +69,8 @@ export async function getStaticProps({ params }) {
   const res = await fetch(
     `https://kendineyazilar.herokuapp.com/posts/${params.id}`
   );
+  console.log(params.id);
+
   const resTag = await fetch('https://kendineyazilar.herokuapp.com/tags');
   const resAuthor = await fetch('https://kendineyazilar.herokuapp.com/users');
 

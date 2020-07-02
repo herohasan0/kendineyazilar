@@ -1,21 +1,40 @@
 .Tagsection {
   display: flex;
   flex-direction: column;
-  width: 200px;
-  
+  transition: 120ms;
+  background-color: #000;
 
-  & + & {
-    margin-top: 40px;
+  @media (--t) {
+    background-color: initial;
+    width: 200px;
+    & + & {
+      margin-top: 40px;
+    }
   }
 
   div {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     margin-top: 10px;
+    width: 100px;
+    @media (--t) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 100%;
+    }
 
     a {
       margin-right: 5px;
       margin-top: 5px;
     }
+  }
+}
+
+.tagText {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  @media (--t) {
+    text-align: left;
   }
 }

@@ -21,6 +21,8 @@ function Post({ ...props }) {
             noBtn={props.noBtn}
             imgCover={props.imgCover}
             imgId={props.imgId}
+            Baslik={props.title}
+            customStyle={props.customStyle}
           />
         </article>
       </main>

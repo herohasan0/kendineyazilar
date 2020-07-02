@@ -1,12 +1,31 @@
+import React, { useState, useEffect } from 'react';
 import Layout from '../components/layout';
 import Post from '../components/Post';
 import Main from '../components/Main';
 import Leftside from '../components/Leftside';
+import Topside from '../components/Topside';
+
+import CONST from '../constants';
+
+import useWindowSize from '../hooks/useWindowSize';
 
 function HomePage({ posts, tags, authors }) {
+  const [width, setWidth] = useState();
+
+  const size = useWindowSize();
+
+  useEffect(() => {
+    setWidth(size.width);
+  });
+
   return (
     <Layout>
-      <Leftside tags={tags} authors={authors} />
+      {width > CONST.TABLET_SIZE ? (
+        <Leftside tags={tags} authors={authors} />
+      ) : (
+        <Topside tags={tags} authors={authors} />
+      )}
+
       <Main>
         {posts.map((post) => (
           <Post

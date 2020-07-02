@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 function Btn({ ...props }) {
   return (
-    <Link href="/posts/[id]" as={`/posts/${props.id}`}>
+    <Link href="/yazilar/[id]" as={`/yazilar/${props.id}`}>
       <a>
         <button className={styles.Btn} type="button">
           Devam

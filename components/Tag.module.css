@@ -1,10 +1,12 @@
 .Tag {
   display: flex;
   justify-content: center;
-  align-items: center;
-
-  height: 22px;
+  /* height: 30px; */
   color: var(--c-secondary);
+  align-items: center;
+  @media (--t) {
+    height: 22px;
+  }
 }
 
 .bg {
@@ -14,4 +16,5 @@
   border-radius: 4px;
   color: var(--c-primary);
   font-size: 13px;
+  height: 30px;
 }

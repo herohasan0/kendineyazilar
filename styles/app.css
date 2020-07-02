@@ -3,8 +3,11 @@
 @import 'variables.css';
 
 html {
-  font-size: 21px;
+  font-size: 18px;
   scroll-behavior: smooth;
+  @media (--t) {
+    font-size: 21px;
+  }
 }
 
 body {

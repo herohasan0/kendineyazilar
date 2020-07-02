@@ -1,4 +1,8 @@
 .Leftside {
-  position: fixed;
-  margin-top: 200px;
+  display: none;
+  @media (--t) {
+    display: block;
+    position: fixed;
+    margin-top: 200px;
+  }
 }
