@@ -59,8 +59,6 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  // params contains the post `id`.
-  // If the route is like /posts/1, then params.id is 1
   const res = await fetch(
     `https://kendineyazilar.herokuapp.com/posts?Etiket.etiket=${params.id}`
   );
@@ -71,7 +69,6 @@ export async function getStaticProps({ params }) {
   const authors = await resAuthor.json();
   const posts = await res.json();
 
-  // Pass post data to the page via props
   return {
     props: {
       posts,

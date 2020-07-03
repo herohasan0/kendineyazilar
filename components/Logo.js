@@ -3,7 +3,7 @@ import styles from './Logo.module.css';
 import { Icon } from './icons';
 import Link from 'next/link';
 
-function Logo({ children }) {
+function Logo() {
   return (
     <Link href="/">
       <a className={styles.Logo}>

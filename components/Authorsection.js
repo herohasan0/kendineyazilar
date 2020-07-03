@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import Tag from './Tag';
 
 import CONST from '../constants';
-
 import useWindowSize from '../hooks/useWindowSize';
 
 import styles from './Tagsection.module.css';

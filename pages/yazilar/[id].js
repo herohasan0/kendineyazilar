@@ -46,7 +46,6 @@ function Post({ post, tags, authors }) {
           imgId={post.Fotograf_Id && post.Fotograf_Id}
           customStyle={{ marginTop: margin }}
         />
-        {/* {size.width > CONST.TABLET_SIZE && <Extra className="">extra</Extra>} */}
       </Main>
     </Layout>
   );
@@ -64,12 +63,9 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  // params contains the post `id`.
-  // If the route is like /posts/1, then params.id is 1
   const res = await fetch(
     `https://kendineyazilar.herokuapp.com/posts/${params.id}`
   );
-  console.log(params.id);
 
   const resTag = await fetch('https://kendineyazilar.herokuapp.com/tags');
   const resAuthor = await fetch('https://kendineyazilar.herokuapp.com/users');
@@ -78,7 +74,6 @@ export async function getStaticProps({ params }) {
   const tags = await resTag.json();
   const authors = await resAuthor.json();
 
-  // Pass post data to the page via props
   return {
     props: {
       post,

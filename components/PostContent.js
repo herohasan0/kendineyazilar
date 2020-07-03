@@ -11,8 +11,6 @@ import SIZE from '../constants';
 import styles from './PostContent.module.css';
 
 function PostContent({ imgCover = false, ...props }) {
-  console.log(props.customStyle);
-
   const size = useWindowSize();
   let width;
   let height;
